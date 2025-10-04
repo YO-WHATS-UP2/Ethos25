@@ -1,0 +1,40 @@
+# ----------------------------------------
+# Node.js/Project Dependencies
+# ----------------------------------------
+
+# Ignore all node_modules folders (local and nested)
+node_modules
+*/node_modules
+
+# Ignore system generated lock files (they are regenerated from package.json)
+package-lock.json
+
+# ----------------------------------------
+# Confidential Files
+# ----------------------------------------
+
+# 🚨 CRITICAL: Ignore all .env files that contain secrets (like the MongoDB URI)
+.env
+.env.*
+.env-sample # Optional: if you use a common name for a sample file
+
+# ----------------------------------------
+# ML/Data Files (Prevent accidental commit of large models or data)
+# ----------------------------------------
+
+# You may want to add these later if you start saving model files or large data
+# *.pkl
+# *.h5
+# *.pth
+# /data/
+
+# ----------------------------------------
+# VS Code/OS generated files
+# ----------------------------------------
+
+# VS Code settings
+.vscode/
+
+# Logs and temp files
+*.log
+npm-debug.log*

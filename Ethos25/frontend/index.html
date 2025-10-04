@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethos25 - Security Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ====================================================== -->
+    <!-- 1. INITIAL SEARCH VIEW (Visible by default)            -->
+    <!-- ====================================================== -->
+    <div id="search-container">
+        <header class="main-header">
+            <h1>Campus Security Dashboard</h1>
+            <p class="subtitle">Enter an Entity ID to resolve identity and view activity timeline.</p>
+        </header>
+        <form id="search-form">
+            <input type="text" id="entity-id-input" placeholder="Enter Entity ID (e.g., E100000)">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- 2. LOADING VIEW (Hidden by default)                    -->
+    <!-- ====================================================== -->
+    <div id="loading-container" class="hidden">
+        <div class="loader"></div>
+        <p>Resolving entity and building timeline...</p>
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- 3. RESULTS DASHBOARD (Hidden by default)               -->
+    <!-- ====================================================== -->
+    <div id="results-container" class="hidden">
+        <header class="results-header">
+            <div class="header-left">
+                <h1>Entity Profile & Timeline</h1>
+                <p class="subtitle">Showing results for Entity ID: <span id="result-entity-id">E100000</span></p>
+            </div>
+            <div class="header-right">
+                <button id="new-search-btn">New Search</button>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Left Panel: Profile Card -->
+            <div class="profile-card">
+                <h2>Profile Details</h2>
+                <div class="profile-item">
+                    <span class="profile-label">Name</span>
+                    <span class="profile-value" id="profile-name">Alexandra Chen</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-label">Role</span>
+                    <span class="profile-value" id="profile-role">Student</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-label">Email</span>
+                    <span class="profile-value" id="profile-email">alex.chen@university.edu</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-label">Department</span>
+                    <span class="profile-value" id="profile-dept">Computer Science</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-label">Student ID</span>
+                    <span class="profile-value" id="profile-student-id">S123456</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-label">Card ID</span>
+                    <span class="profile-value" id="profile-card-id">C101010</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-label">Device Hash</span>
+                    <span class="profile-value" id="profile-device-hash">0xABC123DEF456</span>
+                </div>
+                 <div class="profile-item">
+                    <span class="profile-label">Face ID</span>
+                    <span class="profile-value" id="profile-face-id">F987654</span>
+                </div>
+            </div>
+
+            <!-- Right Panel: Activity Timeline -->
+            <div class="timeline-panel">
+                <h2>Activity Timeline</h2>
+                <div class="timeline-scroll-area" id="timeline-list">
+                    <!-- Timeline items will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
+
+
