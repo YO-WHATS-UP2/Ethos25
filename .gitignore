@@ -5,7 +5,7 @@
 # Ignore all node_modules folders (local and nested)
 node_modules
 */node_modules
-
+Ethos25/backend/data/
 # Ignore system generated lock files (they are regenerated from package.json)
 package-lock.json
 

@@ -271,3 +271,100 @@ h2 {
     color: var(--error-color);
 }
 
+/* --- Profile Image Styling --- */
+.profile-image-container {
+    width: 150px; /* Or any fixed width you prefer */
+    height: 150px; /* Maintain aspect ratio with object-fit, or make it square */
+    border-radius: 8px; /* Slightly rounded corners */
+    overflow: hidden; /* Ensures image corners are also rounded */
+    margin-bottom: 20px; /* Space between image and text details */
+    background-color: #333; /* Placeholder background if image is slow to load */
+    display: flex; /* For centering the image vertically/horizontally */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.profile-image-container img {
+    width: 100%; /* Make image take full width of its container */
+    height: 100%; /* Make image take full height of its container */
+    object-fit: cover; /* This is key! It crops the image to fill the container without distortion */
+    display: block; /* Remove any extra space below the image */
+}
+/* =============================================== */
+/* --- FINAL PROFILE CARD STYLES (REPLACE OLD CSS WITH THIS) --- */
+/* =============================================== */
+
+/* Main card container: A vertical column */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the image, name, and role */
+    padding: 30px;
+    background-color: #2b2b2b;
+    border-radius: 12px;
+}
+
+/* Image container styling */
+.profile-image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden;
+    border: 3px solid #444;
+    margin-bottom: 16px;
+    flex-shrink: 0; /* Prevent the container from shrinking */
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style the name as the main heading */
+#profile-name {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Style the role as a sub-heading */
+#profile-role {
+    font-size: 1rem;
+    color: #a0a0a0;
+    background-color: #3a3a3a;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-top: 8px;
+    margin-bottom: 24px; /* Space before the detailed list starts */
+}
+
+/* Container for each label/value pair */
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Make items take the full width of the card */
+    align-items: flex-start; /* Left-align the text inside */
+    margin-bottom: 16px;
+}
+
+/* Style for the labels (EMAIL, DEPARTMENT, etc.) */
+.profile-label {
+    font-size: 0.75rem;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+/* Style for the data values */
+.profile-value {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    font-family: 'Consolas', 'Menlo', monospace;
+}
+
+/* Remove bottom margin from the last item */
+.profile-card .profile-item:last-child {
+    margin-bottom: 0;
+}
