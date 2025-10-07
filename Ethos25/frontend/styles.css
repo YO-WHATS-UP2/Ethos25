@@ -187,7 +187,9 @@ h2 {
 .timeline-scroll-area::-webkit-scrollbar-thumb:hover {
     background: #777;
 }
+/* --- FINAL, CORRECTED TIMELINE STYLES --- */
 
+/* This is the main container for each row in the timeline */
 .timeline-item {
     display: flex;
     align-items: flex-start;
@@ -196,17 +198,18 @@ h2 {
     padding-bottom: 1.5rem;
 }
 
-/* Timeline Connector Line */
+/* This is the vertical connector line */
 .timeline-item:not(:last-child)::before {
     content: '';
     position: absolute;
-    left: 20px;
-    top: 40px;
+    left: 20px;   /* Aligns with the center of the 42px icon */
+    top: 42px;    /* Starts the line just below the icon */
+    bottom: 0;    /* Stretches the line to the bottom of the item */
     width: 2px;
-    height: calc(100% - 20px);
     background-color: var(--border-color);
 }
 
+/* This is the circular wrapper for the icon */
 .timeline-icon-wrapper {
     width: 42px;
     height: 42px;
@@ -215,7 +218,35 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1; /* This lifts the icon ON TOP of the line */
 }
+
+.timeline-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+
+/* This is the content box next to the icon */
+.timeline-content {
+    flex-grow: 1;
+    padding-top: 0.5rem; /* Align text with icon center */
+}
+
+
+/* --- Original Icon Colors for Historical Events --- */
+.cyan { background-color: #0891b2; }
+.purple { background-color: #7c3aed; }
+.emerald { background-color: #059669; }
+
+
+/* --- ALERT STYLES (Applied safely to child elements) --- */
+
+/* This applies the background ONLY to the content of the alert */
+
+
+/* This color-codes the ICONS for each alert level */
 
 .timeline-icon-wrapper svg {
     width: 24px;
@@ -228,9 +259,6 @@ h2 {
 .purple { background-color: #7c3aed; }
 .emerald { background-color: #059669; }
 
-.timeline-content {
-    flex-grow: 1;
-}
 
 .event-title {
     font-size: 1.1rem;
@@ -367,4 +395,116 @@ h2 {
 /* Remove bottom margin from the last item */
 .profile-card .profile-item:last-child {
     margin-bottom: 0;
+}
+/* --- PREDICTED ALERT STYLES --- */
+
+/* Base style for all alert items */
+
+
+/* Style for the secondary details text */
+.event-details.secondary {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+/* --- Icon and Border Colors for Different Alert Levels --- */
+
+
+/* Medium priority alerts (Unusual) */
+
+/* High priority alerts (ALERT) */
+
+/* --- UPDATED ALERT STYLES --- */
+
+/* Base style for alert items - subtle background */
+
+/* Make the main alert reason text more prominent */
+.timeline-item .alert-reason {
+    color: var(--text-color); /* Brighter text */
+    font-weight: 500;
+    margin: 0.25rem 0;
+}
+
+/* Style for secondary details (confidence, based on last activity) */
+.timeline-item .alert-context {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+}
+
+/* --- Alert Level Colors --- */
+
+
+/* Make the timeline panel a flex container to control its children's height */
+.timeline-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove the fixed height and allow the scroll area to grow and fill the panel */
+.timeline-scroll-area {
+    height: auto; /* Remove the fixed 60vh */
+    flex-grow: 1; /* Allow this element to stretch */
+}
+
+
+/* --- 2. ALERT STYLING --- */
+
+/* Base style for alert items - adds a background and colored left border */
+
+/* Make the main alert reason text more prominent */
+.timeline-item .alert-reason {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Style for secondary details (confidence, based on last activity) */
+.timeline-item .alert-context {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+/* Make the main alert reason text more prominent */
+.timeline-item .alert-reason {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Style for secondary details (confidence, based on last activity) */
+.timeline-item .alert-context {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+/* --- Alert Level Colors (All set to Red) --- */
+
+/* --- FINAL, CORRECTED ALERT STYLES --- */
+
+/* This applies the background style ONLY to the content box of alerts, */
+/* which does NOT interfere with the timeline's alignment. */
+.timeline-item.alert-high .timeline-content,
+.timeline-item.alert-medium .timeline-content,
+.timeline-item.alert-low .timeline-content {
+    background-color: rgba(44, 44, 44, 0.5);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* This color-codes the ICONS for each alert level. */
+.timeline-item.alert-high .timeline-icon-wrapper { background-color: var(--error-color); } /* Red */
+.timeline-item.alert-medium .timeline-icon-wrapper {  background-color: var(--error-color);} /* Amber */
+.timeline-item.alert-low .timeline-icon-wrapper {  background-color: var(--error-color); } /* Gray */
+
+/* These styles make the text inside the alerts more readable. */
+.timeline-item .alert-reason {
+    color: var(--text-color);
+    font-weight: 500;
+}
+.timeline-item .alert-context {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
 }
