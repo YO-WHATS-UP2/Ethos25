@@ -9,6 +9,7 @@ Ethos25/backend/data/
 # Ignore system generated lock files (they are regenerated from package.json)
 package-lock.json
 
+Ethos25.zip
 # ----------------------------------------
 # Confidential Files
 # ----------------------------------------

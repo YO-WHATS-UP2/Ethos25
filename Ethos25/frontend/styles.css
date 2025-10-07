@@ -508,3 +508,56 @@ h2 {
     color: #888;
     margin-top: 0.5rem;
 }
+
+/* --- TOOLTIP STYLES --- */
+
+.info-icon {
+    display: inline-block;
+    position: relative;
+    margin-left: 8px;
+    font-size: 0.9rem;
+    background-color: #555;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    font-style: normal;
+}
+
+.info-icon .tooltip {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a1a;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 10;
+    text-align: left;
+}
+
+.info-icon:hover .tooltip {
+    display: block; /* Show on hover */
+}
+
+.tooltip h4 {
+    margin-top: 0;
+    color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tooltip p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0.5rem 0;
+}
