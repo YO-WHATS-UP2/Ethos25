@@ -1,3 +1,5 @@
+## https://drive.google.com/file/d/18TdBv1lujMQ18JJ_hfsOZUy_JHbCzumU/view?usp=drive_link
+
 ## Ethos25 - Predictive Campus Security Dashboard
 Ethos25 is a full-stack application that provides a comprehensive security dashboard for monitoring campus activity. It unifies disparate data sources to build a complete profile for any entity (student or staff) and uses a machine learning model to predict their next location based on historical patterns and simulated inactivity alerts.
 
