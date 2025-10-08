@@ -50,13 +50,14 @@ Ethos25 is a full-stack application that provides a comprehensive security dashb
       Set up Environment Variables:
         Create a file named .env in the backend directory and add your MongoDB connection string:
 
-          MONGO_URI="your_mongodb_connection_string_here"
+          
+          MONGO_URI="mongodb+srv://Ethos:ethos123@cluster0.myoqnlm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
       Run the server:
 
           node server.js
       The server will start on http://localhost:3000.
 
-  2. Machine Learning Pipeline
+  3. Machine Learning Pipeline
         The ML pipeline is responsible for training the model and generating the alerts CSV.
       
         Training (if needed): Open the ml_notebook/Ethos25_Training.ipynb notebook in a Jupyter or Colab environment. Run all the cells to perform data processing, feature engineering, and model training. This will generate the necessary model files (.joblib) and the df_ml_ready_final.csv.
@@ -66,7 +67,7 @@ Ethos25 is a full-stack application that provides a comprehensive security dashb
           python ml_notebook/predictor.py
         Move the Alerts File: After the script runs, move the generated alerts.csv file to the backend/data/ directory so the server can load it.
 
-  3. Frontend Setup
+  4. Frontend Setup
         Open the frontend/index.html file directly in your web browser.
         
         Use the search bar to enter an Entity_ID (e.g., E100000) and view the results.
